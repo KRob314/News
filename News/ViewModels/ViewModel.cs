@@ -11,6 +11,7 @@ namespace News.ViewModels
     [ObservableObject]
     public abstract partial class ViewModel 
     {
-       
+       public INavigate Navigation { get; set; }
+        internal ViewModel(INavigate navigation) => Navigation = navigation;
     }
 }

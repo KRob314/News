@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:News.ViewModels"
+             x:Class="News.Views.SettingsView"
+             x:DataType="viewModels:SettingsViewModel"
+             Title="SettingsView">
+    <VerticalStackLayout>
+        <Label 
+            Text="Settings"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label Text="Enter API Key from https://newsapi.org/"></Label>
+
+        <Entry Text="{Binding ApiKey}" />
+
+        <!--<Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Alternatively, click " />
+                    <Span Text="here"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://learn.microsoft.com/dotnet/maui/" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                    <Span Text=" to view .NET MAUI documentation." />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>-->
+
+
+        <Button 
+                Text="Save"
+                TextColor="Black"
+                Command="{Binding SaveSettingsCommand}">
+            <!--<Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding ShowAll}" Value="True">
+                    <Setter Property="BackgroundColor" Value="{DynamicResource CompletedColor}"/>
+                    <Setter Property="TextColor" Value="White" />
+                </DataTrigger>
+            </Button.Triggers>-->
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
